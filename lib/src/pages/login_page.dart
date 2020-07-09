@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterflix/src/pages/select_profile_page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset("assets/imgs/logo.png", height: 50,),
+                  Image.asset("assets/imgs/logo.png",),
                   SizedBox(
                     height: 60,
                   ),
@@ -75,7 +76,12 @@ class LoginPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6)),
                       color: Colors.white,
                       borderSide: BorderSide(width: 1.5, color: Colors.grey),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => SelectProfilePage())
+                        );
+                      },
                       child: Text(
                         "Entrar",
                         style: TextStyle(color: Colors.white, fontSize: 18),
